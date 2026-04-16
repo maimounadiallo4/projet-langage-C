@@ -1,6 +1,7 @@
 /**
  * @file parser.h
  * @brief Fichier d'en-tête principal pour l'analyseur d'expressions arithmétiques.
+ * @author Maïmouna DIALLO
  *
  * Ce fichier contient les déclarations des variables globales, des fonctions
  * d'analyse syntaxique (basées sur la grammaire BNF) et des utilitaires lexicaux.

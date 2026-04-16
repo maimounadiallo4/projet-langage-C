@@ -1,7 +1,7 @@
 CC      = gcc
 CFLAGS  = -Wall -Wextra
 TARGET  = analyseur
-SRCS    = main.c lexique.c analyse_haute.c analyse_basse.c erreurs.c
+SRCS    = main.c lexique.c analyse_haute.c analyse_basse.c erreur.c
 OBJS    = $(SRCS:.c=.o)
 
 .PHONY: all clean
@@ -18,4 +18,8 @@ $(TARGET): $(OBJS)
 
 # Supprime les objets ET le binaire
 clean:
+ifeq ($(OS),Windows_NT)
+	del /Q /F $(OBJS) $(TARGET).exe
+else
 	rm -f $(OBJS) $(TARGET)
+endif
