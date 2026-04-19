@@ -11,7 +11,7 @@
  *   - analyse_basse.c (Abib)   : reconnaissance de facteur(), nombre(), chiffre()
  *   - erreur.c (Alhousseynou)  : signaler_erreur(), retablissement(), erreur_syntaxe
  *
- * === Fonctionnement général ===
+ * Fonctionnement général
  *
  * Le programme affiche une invite ("A toi : ") puis lit une expression
  * arithmétique terminée par le caractère '='.
@@ -44,10 +44,6 @@
 
 #include "parser.h"
 
-/* ========================================================================= */
-/* FONCTION PRINCIPALE                                                        */
-/* ========================================================================= */
-
 /**
  * @brief Point d'entrée du programme.
  *
@@ -66,35 +62,33 @@ int main(void)
 {
     int valeur;  /* Valeur calculée de l'expression courante */
 
-    /* ------------------------------------------------------------------ */
     /* Boucle infinie : on traite les expressions une par une              */
     /* jusqu'à ce que l'utilisateur tape '.'                               */
-    /* ------------------------------------------------------------------ */
     while (1)
     {
-        /* ── Étape 1 : Afficher l'invite ────────────────────────────── */
+        /*  Étape 1 : Afficher l'invite */
         printf("A toi : ");
         fflush(stdout);  /* Force l'affichage immédiat (stdout peut être bufferisé) */
 
-        /* ── Étape 2 : Lire le premier caractère utile ──────────────── */
-        /*    lire_utile() saute les espaces/tabulations/sauts de ligne   */
-        /*    et place le premier caractère significatif dans calu.        */
+        /*  Étape 2 : Lire le premier caractère utile */
+        /*  lire_utile() saute les espaces/tabulations/sauts de ligne */
+        /*  et place le premier caractère significatif dans calu.*/
         lire_utile();
 
-        /* ── Étape 3 : Tester la fin de session ────────────────────── */
-        /*    Le caractère '.' indique que l'utilisateur veut quitter.    */
+        /*  Étape 3 : Tester la fin de session */
+        /*  Le caractère '.' indique que l'utilisateur veut quitter.    */
         if (calu == '.')
         {
             printf("Au revoir...\n");
             break;  /* Sort de la boucle while → fin du programme */
         }
 
-        /* ── Étape 4 : Réinitialiser le drapeau d'erreur ───────────── */
+        /* Étape 4 : Réinitialiser le drapeau d'erreur */
         /*    Avant chaque nouvelle expression, on remet erreur_syntaxe   */
         /*    à 0 pour repartir sur une base propre.                      */
         erreur_syntaxe = 0;
 
-        /* ── Étape 5 : Analyser et évaluer l'expression ─────────────── */
+        /* Étape 5 : Analyser et évaluer l'expression */
         /*    expression() est la fonction racine de notre analyseur       */
         /*    récursif descendant. Elle appelle terme(), qui appelle       */
         /*    facteur(), qui appelle nombre()/chiffre(), etc.              */
@@ -103,7 +97,7 @@ int main(void)
         /*    et erreur_syntaxe passe à 1.                                 */
         valeur = expression();
 
-        /* ── Étape 6 : Vérifier le '=' final ────────────────────────── */
+        /*  Étape 6 : Vérifier le '=' final  */
         /*    Après avoir reconnu l'expression, le caractère courant      */
         /*    (calu) doit être '='. S'il ne l'est pas et qu'aucune        */
         /*    erreur n'a encore été détectée, c'est une erreur de syntaxe. */
@@ -115,7 +109,7 @@ int main(void)
             }
         }
 
-        /* ── Étape 7 : Afficher le résultat ─────────────────────────── */
+        /* Étape 7 : Afficher le résultat */
         if (erreur_syntaxe)
         {
             /* L'expression contenait une erreur syntaxique.              */
