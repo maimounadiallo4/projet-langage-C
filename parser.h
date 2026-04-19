@@ -1,6 +1,7 @@
 /**
  * @file parser.h
  * @brief Fichier d'en-tête principal pour l'analyseur d'expressions arithmétiques.
+ * @author Maïmouna DIALLO
  *
  * Ce fichier contient les déclarations des variables globales, des fonctions
  * d'analyse syntaxique (basées sur la grammaire BNF) et des utilitaires lexicaux.
@@ -23,9 +24,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-/* ========================================================================= */
-/* VARIABLES GLOBALES                                                         */
-/* ========================================================================= */
+/* VARIABLES GLOBALES */
 
 /**
  * @brief Caractère actuellement examiné par l'analyseur.
@@ -45,9 +44,7 @@ extern char calu;
  */
 extern int erreur_syntaxe;
 
-/* ========================================================================= */
-/* UTILITAIRES LEXICAUX (Module Lexique — Boubacar)                          */
-/* ========================================================================= */
+/* UTILITAIRES LEXICAUX (Module Lexique — Boubacar) */
 
 /**
  * @brief Lit le prochain caractère brut depuis stdin et le stocke dans calu.
@@ -66,9 +63,7 @@ void lire_brut();
  */
 void lire_utile();
 
-/* ========================================================================= */
-/* ANALYSE HAUTE (Module — Cécile)                                           */
-/* ========================================================================= */
+/* ANALYSE HAUTE (Module — Cécile) */
 
 /**
  * @brief Analyse et évalue la règle BNF :
@@ -97,9 +92,7 @@ int expression();
  */
 int terme();
 
-/* ========================================================================= */
-/* ANALYSE BASSE (Module — Abib)                                             */
-/* ========================================================================= */
+/* ANALYSE BASSE (Module — Abib) */
 
 /**
  * @brief Analyse et évalue la règle BNF :
@@ -135,9 +128,7 @@ int nombre();
  */
 int chiffre();
 
-/* ========================================================================= */
-/* GESTION DES ERREURS (Module — Alhousseynou)                               */
-/* ========================================================================= */
+/* GESTION DES ERREURS (Module — Alhousseynou) */
 
 /**
  * @brief Signale une erreur syntaxique avec un message explicatif.
