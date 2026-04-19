@@ -4,7 +4,7 @@ TARGET  = analyseur
 SRCS    = main.c lexique.c analyse_haute.c analyse_basse.c erreur.c
 OBJS    = $(SRCS:.c=.o)
 
-.PHONY: all clean
+.PHONY: all clean test
 
 # Lien final : produit ./analyseur depuis les fichiers objets
 all: $(TARGET)
@@ -22,4 +22,17 @@ ifeq ($(OS),Windows_NT)
 	del /Q /F $(OBJS) $(TARGET).exe
 else
 	rm -f $(OBJS) $(TARGET)
+endif
+
+# Cible pour compiler le testeur universel
+tests/tester: tests/tester.c
+	$(CC) $(CFLAGS) tests/tester.c -o tests/tester
+
+# Lance les tests automatisés (Uniforme Linux/Windows)
+test: all tests/tester
+ifeq ($(OS),Windows_NT)
+	@tests\tester.exe
+else
+	@chmod +x tests/tester
+	@./tests/tester
 endif

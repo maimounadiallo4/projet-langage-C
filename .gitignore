@@ -1,0 +1,25 @@
+# Objets compilés
+*.o
+*.obj
+
+# Exécutables
+analyseur
+analyseur.exe
+tests/tester
+tests/tester.exe
+
+# Fichiers de backup ou temporaires
+*~
+*.swp
+*.bak
+
+# Dossiers d'IDE (Optionnel mais recommandé)
+.vscode/
+.idea/
+*.cbp
+*.layout
+*.depend
+
+# OS files
+.DS_Store
+Thumbs.db

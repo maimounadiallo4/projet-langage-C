@@ -12,10 +12,6 @@
 #include "parser.h"
 #include <stdio.h>
 
-/* ========================================================================= */
-/* VARIABLE GLOBALE                                                           */
-/* ========================================================================= */
-
 /**
  * @brief Caractère actuellement examiné par l'analyseur.
  *
@@ -24,10 +20,6 @@
  * quel caractère est en attente de traitement.
  */
 char calu;
-
-/* ========================================================================= */
-/* FONCTIONS                                                                  */
-/* ========================================================================= */
 
 /**
  * @brief Lit le prochain caractère brut depuis stdin et le stocke dans calu.

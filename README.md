@@ -11,6 +11,7 @@ Programme en C qui lit des expressions arithmetiques, verifie leur syntaxe selon
 - [Fonctionnalites](#fonctionnalites)
 - [Prerequis](#prerequis)
 - [Compilation et lancement](#compilation-et-lancement)
+- [Tests automatisés](#tests-automatisés)
 - [Utilisation](#utilisation)
 - [Grammaire BNF](#grammaire-bnf)
 - [Architecture du projet](#architecture-du-projet)
@@ -81,6 +82,23 @@ make clean
 
 ---
 
+## Tests automatisés
+
+Le projet inclut un système de tests automatisés pour vérifier que l'analyseur respecte toujours la grammaire et les règles d'évaluation.
+
+### Exécuter les tests
+
+Lancez simplement la commande suivante :
+
+```bash
+make test
+```
+
+### Fonctionnement
+1. Le projet compile un petit programme **universel** en C (`tests/tester.c`).
+2. Ce programme parcourt le fichier `tests/cas_de_test.txt`.
+3. Il compare les résultats obtenus avec les résultats attendus et affiche un compte rendu stylisé directement dans votre terminal.
+
 ## Utilisation
 
 Le programme fonctionne en mode interactif. A chaque invite `A toi :`, entrez une expression arithmetique terminee par `=`. Tapez `.` pour quitter.
@@ -150,7 +168,8 @@ projet-langage-C/
 ├── erreur.c           <- Gestion des erreurs : signaler_erreur(), retablissement()
 ├── Makefile           <- Automatisation de la compilation
 ├── tests/
-│   └── cas_de_test.txt <- Cas de test (expressions correctes et erronees)
+│   ├── cas_de_test.txt <- Case de test (expressions correctes et erronées)
+│   └── tester.c        <- Programme C de test universel (remplace le script .sh)
 ├── CONTRIBUTING.md    <- Guide de contribution et conventions de l'equipe
 └── README.md          <- Ce fichier
 ```

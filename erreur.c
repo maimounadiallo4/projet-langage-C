@@ -11,9 +11,8 @@
 /* On inclut parser.h pour avoir accès à toutes les déclarations communes */
 #include "parser.h"
 
-/* =========================================================================
+/*
    VARIABLE GLOBALE
-   =========================================================================
    "erreur_syntaxe" est un drapeau (un interrupteur) :
      - 0 = tout va bien, pas d'erreur
      - 1 = une erreur a été détectée
@@ -22,9 +21,8 @@
 */
 int erreur_syntaxe = 0;
 
-/* =========================================================================
+/*
    FONCTION : signaler_erreur
-   =========================================================================
    But : afficher un message d'erreur quand l'utilisateur écrit
          une expression incorrecte, comme "2 ++ 3" ou "(2 + ".
 
@@ -56,9 +54,8 @@ void signaler_erreur(const char *message)
     erreur_syntaxe = 1;
 }
 
-/* =========================================================================
+/*
    FONCTION : retablissement
-   =========================================================================
    But : après une erreur, le programme ne s'arrête pas.
          Il faut "sauter" tout ce qui reste de l'expression incorrecte
          pour pouvoir analyser la prochaine expression proprement.
