@@ -10,7 +10,6 @@
  */
 
 #include "parser.h"
-#include <stdio.h>
 
 /**
  * @brief Caractère actuellement examiné par l'analyseur.
