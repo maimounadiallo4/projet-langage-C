@@ -1,0 +1,50 @@
+/Bureau/DIC1/Projet/projet-langage-C$ ./analyseur 
+A toi : 3 - 7 ==
+la syntaxe de l'expression est correcte
+sa valeur est -4
+A toi : 
+Erreur : nombre ou '(' attendu (caractere fautif : '=')
+la syntaxe de l'expression est erronee
+A toi : 3 - 4 ====
+la syntaxe de l'expression est correcte
+sa valeur est -1
+A toi : 
+Erreur : nombre ou '(' attendu (caractere fautif : '=')
+la syntaxe de l'expression est erronee
+A toi : 
+Erreur : nombre ou '(' attendu (caractere fautif : '=')
+la syntaxe de l'expression est erronee
+A toi : 
+Erreur : nombre ou '(' attendu (caractere fautif : '=')
+la syntaxe de l'expression est erronee
+A toi : 23 - 24 = -1
+la syntaxe de l'expression est correcte
+sa valeur est -1
+A toi : 
+Erreur : nombre ou '(' attendu (caractere fautif : '-')
+la syntaxe de l'expression est erronee
+=       
+A toi : 12 - 2 =.
+la syntaxe de l'expression est correcte
+sa valeur est 10
+A toi : Au revoir...
+abib@abib:~/Bureau/DIC1/Projet/projet-langage-C$ ./analyseur 
+A toi : 12 - 2.=
+
+Erreur : '=' attendu en fin d'expression (caractere fautif : '.')
+la syntaxe de l'expression est erronee
+Au revoir...
+abib@abib:~/Bureau/DIC1/Projet/projet-langage-C$ ./analyseur 
+A toi : 12 - 2 = 10 = 8 + 2 = 
+la syntaxe de l'expression est correcte
+sa valeur est 10
+A toi : la syntaxe de l'expression est correcte
+sa valeur est 10
+A toi : la syntaxe de l'expression est correcte
+sa valeur est 10
+A toi : 12-2=10=8+2
+la syntaxe de l'expression est correcte
+sa valeur est 10
+A toi : la syntaxe de l'expression est correcte
+sa valeur est 10
+A toi : 
