@@ -26,3 +26,10 @@
 42= | 42 | OK | Nombre entier multi-chiffres seul
 5/0= | ERREUR | ERREUR | Division par zero interdite
 2  +  3= | 5 | OK | Espaces multiples entre operateurs toleres
+3-7== | ERREUR | ERREUR | Plusieurs signes egaux
+12+12===== | ERREUR | ERREUR | Beaucoup de signes egaux
+38+9=abc | ERREUR | ERREUR | Chaine arbitraire apres egal
+9=00 | ERREUR | ERREUR | Chiffres inattendus apres egal
+33+12+22+= | ERREUR | ERREUR | Mix d'erreur d'operateur et egal
+23 - 24 = -1 | ERREUR | ERREUR | Operateur inattendu apres egal
+12 - 2.= | ERREUR | ERREUR | Point au milieu de lexpression

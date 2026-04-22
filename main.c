@@ -37,7 +37,7 @@
  *   la syntaxe de l'expression est correcte
  *   sa valeur est -12140
  *   A toi : 2 ++ 3 =
- *   la syntaxe de l'expression est erronee
+ *   la syntaxe de l'e xpression est erronee
  *   A toi : .
  *   Au revoir...
  */
@@ -107,6 +107,29 @@ int main(void)
             {
                 signaler_erreur("'=' attendu en fin d'expression");
             }
+            else
+            {
+                /* L'expression est finie et valide. On vérifie la suite de la ligne. */
+                int a_des_residus = 0;
+                char caractere_fautif = 0;
+                while (1) {
+                    lire_brut();
+                    if (calu == '\n' || calu == EOF || calu == '.') break;
+                    if (calu != ' ' && calu != '\t' && calu != '\r') {
+                        if (!a_des_residus) {
+                            a_des_residus = 1;
+                            caractere_fautif = calu;
+                        }
+                    }
+                }
+                
+                if (a_des_residus) {
+                    char caractere_arret = calu; /* '\n' ou '.' */
+                    calu = caractere_fautif;
+                    signaler_erreur("symbole inattendu apres '='");
+                    calu = caractere_arret; /* restaurer '\n' ou '.' */
+                }
+            }
         }
 
         /* Étape 7 : Afficher le résultat */
@@ -117,17 +140,8 @@ int main(void)
 
             /* Appel à retablissement() pour consommer tous les           */
             /* caractères restants jusqu'au prochain '=' ou '.'.          */
-            /* Cela permet de reprendre proprement l'analyse de la        */
-            /* prochaine expression sans être perturbé par les résidus    */
-            /* de l'expression erronée.                                   */
-            retablissement();
-
-            /* Cas spécial : si retablissement() s'est arrêté sur '.',   */
-            /* cela signifie que l'utilisateur veut quitter. On sort.     */
-            if (calu == '.')
-            {
-                printf("Au revoir...\n");
-                break;
+            if (calu != '\n' && calu != EOF && calu != '.') {
+                retablissement();
             }
         }
         else
@@ -135,6 +149,20 @@ int main(void)
             /* L'expression est syntaxiquement correcte.                  */
             printf("la syntaxe de l'expression est correcte\n");
             printf("sa valeur est %d\n", valeur);
+        }
+
+        /* Vidage de la fin de ligne pour éviter les résidus qui déclenchent
+           des erreurs (comme de multiples '=' ou des expressions concaténées).
+           On s'arrête si on rencontre un '.' ou un saut de ligne. */
+        while (calu != '\n' && calu != EOF && calu != '.')
+        {
+            lire_brut();
+        }
+
+        if (calu == '.')
+        {
+            printf("Au revoir...\n");
+            break;
         }
     }
 
