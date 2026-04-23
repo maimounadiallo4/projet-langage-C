@@ -1,3 +1,20 @@
+/**
+ * @file cas_de_test.txt
+ * @brief Fichier contenant les cas de test pour l'analyseur
+ *
+ * FORMAT DU FICHIER DE TEST :
+ * Chaque ligne définit un cas de test en utilisant le séparateur '|'.
+ * Structure d'une ligne :
+ * [Expression à tester] | [Résultat Attendu] | [Ignoré/Commentaire] | [Description]
+ * 
+ * Note : 
+ * - Si une erreur est attendue (erreur de syntaxe, division par zéro, etc.),
+ *   le "Résultat Attendu" doit valoir "ERREUR".
+ * - Le programme (tester.c) ignore automatiquement les espaces autour des éléments.
+ *
+ * @author Ousmane
+ */
+
 2+3= | 5 | OK | Addition simple
 10-4= | 6 | OK | Soustraction simple
 3*4= | 12 | OK | Multiplication simple

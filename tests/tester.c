@@ -1,7 +1,17 @@
+/**
+ * @file tester.c
+ * @brief Programme de tests automatisés pour l'analyseur
+ *
+ * @author Ousmane
+ */
+
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
+/*
+ * Configuration multiplateforme pour la création de processus (popen/pclose)
+ * et le nom de l'exécutable à tester.
+ */
 #ifdef _WIN32
     #include <io.h>
     #define popen _popen
@@ -31,6 +41,15 @@ void afficher_entete() {
     printf("└────────────────────────────────────────────────────────┘\n\n" RESET);
 }
 
+/**
+ * @brief Point d'entrée du programme de test.
+ * 
+ * Ce programme lit un fichier de scénarios de tests (`tests/cas_de_test.txt`), 
+ * exécute l'analyseur en lui envoyant chaque expression, et vérifie si le
+ * résultat produit (sortie standard) correspond à ce qui est attendu.
+ * 
+ * @return 0 si tous les tests ont réussi, 1 si au moins un test a échoué.
+ */
 int main() {
     FILE *fichier_tests = fopen("tests/cas_de_test.txt", "r");
     if (!fichier_tests) {
