@@ -45,11 +45,19 @@ void afficher_entete() {
 
 /**
  * @brief Point d'entrée du programme de test.
+<<<<<<< HEAD
  *
  * Ce programme lit un fichier de scénarios de tests (`tests/cas_de_test.txt`),
  * exécute l'analyseur en lui envoyant chaque expression, et vérifie si le
  * résultat produit (sortie standard) correspond à ce qui est attendu.
  *
+=======
+ * 
+ * Ce programme lit un fichier de scénarios de tests (`tests/cas_de_test.txt`), 
+ * exécute l'analyseur en lui envoyant chaque expression, et vérifie si le
+ * résultat produit (sortie standard) correspond à ce qui est attendu.
+ * 
+>>>>>>> 1ebea7bc64162936c5abb2af66958a9e86056fc3
  * @return 0 si tous les tests ont réussi, 1 si au moins un test a échoué.
  */
 int main() {

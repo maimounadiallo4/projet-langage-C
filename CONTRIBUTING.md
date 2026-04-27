@@ -1,9 +1,9 @@
-# 📐 Projet C — Analyse et Évaluation d'Expressions Arithmétiques
+# Projet C — Analyse et Évaluation d'Expressions Arithmétiques
 **DIC1 — ESP/UCAD | Année 2025–2026**
 
 ---
 
-## 👥 Équipe et Responsabilités
+## Équipe et Responsabilités
 
 | Membre | Branche | Fichier(s) |
 |---|---|---|
@@ -16,7 +16,7 @@
 
 ---
 
-## 🌿 Structure des Branches
+## Structure des Branches
 
 ```
 main              ← code stable et validé uniquement
@@ -29,11 +29,11 @@ main              ← code stable et validé uniquement
     └── branch-ousmane
 ```
 
-> ⚠️ **Personne ne push directement sur `main` ou `dev`.** Tout passe par une Pull Request.
+> **Personne ne push directement sur `main` ou `dev`.** Tout passe par une Pull Request.
 
 ---
 
-## 🚀 Setup Initial (une seule fois)
+## Setup Initial (une seule fois)
 
 ```bash
 # 1. Cloner le dépôt
@@ -52,7 +52,7 @@ git push origin branch-tonprenom
 
 ---
 
-## 🔄 Routine Quotidienne (à suivre CHAQUE JOUR)
+## Routine Quotidienne (à suivre CHAQUE JOUR)
 
 ### ① Avant de commencer à coder — Synchroniser
 
@@ -95,7 +95,7 @@ git push origin branch-tonprenom
 
 ---
 
-## ✍️ Convention de Commits
+## Convention de Commits
 
 Format : `type(module): description courte en français`
 
@@ -107,11 +107,11 @@ Format : `type(module): description courte en français`
 | `docs` | Documentation | `docs: met à jour parser.h` |
 | `refactor` | Réécriture sans changement de comportement | `refactor(facteur): simplifie la boucle` |
 
-> ✅ Un bon commit = **une seule chose faite** + message qui explique **pourquoi**, pas juste **quoi**.
+> Un bon commit = **une seule chose faite** + message qui explique **pourquoi**, pas juste **quoi**.
 
 ---
 
-## 🚫 Règles Anti-Conflits (Obligatoires)
+## Règles Anti-Conflits (Obligatoires)
 
 | Règle | Explication |
 |---|---|
@@ -123,7 +123,7 @@ Format : `type(module): description courte en français`
 
 ---
 
-## ⚙️ Tester avant de Pusher
+## Tester avant de Pusher
 
 Avant chaque `git push`, vérifier que le code compile :
 
@@ -139,7 +139,7 @@ make
 
 ---
 
-## 🆘 Résolution de Conflits
+## Résolution de Conflits
 
 Si Git signale un conflit après un `git merge` :
 
@@ -165,7 +165,7 @@ git commit -m "fix: résolution conflit merge avec dev"
 
 ---
 
-## 📅 Planning de Livraison
+## Planning de Livraison
 
 | Phase | Quoi | Qui | Deadline |
 |---|---|---|---|
@@ -178,7 +178,7 @@ git commit -m "fix: résolution conflit merge avec dev"
 
 ---
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 projet_c/
@@ -197,7 +197,7 @@ projet_c/
 
 ---
 
-## 🔧 Fichier `.gitignore`
+## Fichier `.gitignore`
 
 S'assurer que ce fichier est à la racine du projet :
 
@@ -219,4 +219,4 @@ Thumbs.db
 
 ---
 
-Aythia niou dem 
+### Aythia niou dem 
